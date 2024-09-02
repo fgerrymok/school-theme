@@ -176,3 +176,32 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// Add, Remove, or Edit Custom Comment Form Fields
+function custom_comment_form_fields( $default_fields ) {
+	$default_fields['logged_in_as'] = 	"<p class='comment-notes'>
+											<span id='email-notes'>Your email address will not be published.</span>
+											<span class='required-field-message'>Required fields are marked <span class='required'>*</span></span>
+										</p>";
+	$default_fields['comment_field'] .= "<p class='comment-form-author'>
+											<label for='author'>
+												Name 
+												<span class='required'>*</span>
+											</label>
+											<input id='author' name='author' type='text' required/>
+										</p>";
+	$default_fields['comment_field'] .= "<p class='comment-form-email'>
+											<label for='email'>
+												Email 
+												<span class='required'>*</span>
+											</label>
+											<input id='email' name='email' type='email' required/>
+										</p>";
+	$default_fields['comment_field'] .= "<p class='comment-form-url'>
+											<label for='url'>Website </label>
+											<input id='url' name='url' type='url'/>
+										</p>";
+
+	return $default_fields;
+}
+
+add_filter('comment_form_defaults', 'custom_comment_form_fields');
