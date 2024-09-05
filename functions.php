@@ -205,3 +205,20 @@ function custom_comment_form_fields( $default_fields ) {
 }
 
 add_filter('comment_form_defaults', 'custom_comment_form_fields');
+
+/**
+ * Custom Post Types and Taxonomies.
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+// Use this to switch from Block editor to Classic Editor
+// function fwd_post_filter( $use_block_editor, $post ) {
+//     // Add IDs to the array
+//     $page_ids = array( 61, 68 );
+//     if ( in_array( $post->ID, $page_ids ) ) {
+//         return false;
+//     } else {
+//         return $use_block_editor;
+//     }
+// }
+// add_filter( 'use_block_editor_for_post', 'fwd_post_filter', 10, 2 );
