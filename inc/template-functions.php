@@ -36,3 +36,34 @@ function school_theme_pingback_header() {
 }
 add_action( 'wp_head', 'school_theme_pingback_header' );
 
+
+// Change placeholder of title on the CPT student 
+function change_default_title( $title ){
+
+	$screen = get_current_screen();
+	
+	if ( 'sc-student' == $screen->post_type ){
+	$title = 'Add student name';
+	}
+	
+	return $title;
+}
+	
+add_filter( 'custom_placeholder_students', 'change_default_title' );
+
+
+// Change Excerpt Length to 20 words
+function sc_excerpt_length( $length ) {
+	if ( get_post_type() ==  'sc-student'  ) {
+        return 25; 
+    }
+}
+
+add_filter( 'excerpt_length', 'sc_excerpt_length', 999 );
+
+// Change Excerpt more
+function sc_excerpt_more( $more ) {
+	$more = '<a class="read-more" href="'.esc_url(get_permalink()).'">' . __('Read more about the student...', 'sc') . '</a>';
+	return $more;
+}
+add_filter( 'excerpt_more', 'sc_excerpt_more', 999);
