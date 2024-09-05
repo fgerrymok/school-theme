@@ -35,3 +35,4 @@ function school_theme_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'school_theme_pingback_header' );
+
