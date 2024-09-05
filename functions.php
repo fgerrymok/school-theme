@@ -222,3 +222,15 @@ require get_template_directory() . '/inc/cpt-taxonomy.php';
 //     }
 // }
 // add_filter( 'use_block_editor_for_post', 'fwd_post_filter', 10, 2 );
+
+
+// Change Default Title in Staff CPT to Custom Title
+function change_default_title( $title ) {
+	$screen = get_current_screen();
+	if ( 'sc-staff' === $screen->post_type ) {
+		$title = "Add Staff Name";
+	}
+	return $title;
+}
+
+add_filter('enter_title_here', 'change_default_title');
