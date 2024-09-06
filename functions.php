@@ -49,7 +49,8 @@ function school_theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'school-theme' ),
+			'header-nav' => esc_html__( 'Header Navigation', 'school-theme' ),
+			'footer-nav' => esc_html__('Footer Navigation', 'school-theme'),
 		)
 	);
 
@@ -176,3 +177,109 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// Add, Remove, or Edit Custom Comment Form Fields
+function custom_comment_form_fields( $default_fields ) {
+	$default_fields['logged_in_as'] = 	"<p class='comment-notes'>
+											<span id='email-notes'>Your email address will not be published.</span>
+											<span class='required-field-message'>Required fields are marked <span class='required'>*</span></span>
+										</p>";
+	$default_fields['comment_field'] .= "<p class='comment-form-author'>
+											<label for='author'>
+												Name 
+												<span class='required'>*</span>
+											</label>
+											<input id='author' name='author' type='text' required/>
+										</p>";
+	$default_fields['comment_field'] .= "<p class='comment-form-email'>
+											<label for='email'>
+												Email 
+												<span class='required'>*</span>
+											</label>
+											<input id='email' name='email' type='email' required/>
+										</p>";
+	$default_fields['comment_field'] .= "<p class='comment-form-url'>
+											<label for='url'>Website </label>
+											<input id='url' name='url' type='url'/>
+										</p>";
+
+	return $default_fields;
+}
+
+add_filter('comment_form_defaults', 'custom_comment_form_fields');
+
+/**
+ * Custom Post Types and Taxonomies.
+ */
+require get_template_directory() . '/inc/cpt-taxonomy.php';
+
+// Use this to switch from Block editor to Classic Editor
+// function fwd_post_filter( $use_block_editor, $post ) {
+//     // Add IDs to the array
+//     $page_ids = array( 61, 68 );
+//     if ( in_array( $post->ID, $page_ids ) ) {
+//         return false;
+//     } else {
+//         return $use_block_editor;
+//     }
+// }
+// add_filter( 'use_block_editor_for_post', 'fwd_post_filter', 10, 2 );
+
+
+// Change Default Title in Staff CPT to Custom Title
+function change_default_title( $title ) {
+	$screen = get_current_screen();
+	if ( 'sc-staff' === $screen->post_type ) {
+		$title = "Add Staff Name";
+	}
+	return $title;
+}
+
+add_filter('enter_title_here', 'change_default_title');
+
+// Adding custom logo (for the footer)
+add_theme_support( 'custom-logo' );
+
+function school_theme_custom_logo_setup() {
+	$defaults = array(
+		'height' 				=> 240,
+		'width' 				=> 240,
+		'flex-height'		    => true,
+		'flex-width' 			=> true,
+	);
+	add_theme_support( 'custom-logo' );
+}
+
+add_action('after_setup_theme', 'school_theme_custom_logo_setup');
+
+
+// Enqueue JS scripts
+// function sc_scripts() {
+// 	// AOS Animate on Scroll
+
+// 	wp_enqueue_style(
+// 		'aos-styles',
+// 		get_template_directory_uri() . '/style.css',
+// 		array(),
+// 		'1.0.0',
+// 	);
+
+// 	wp_enqueue_script(
+// 		'aos-script',
+// 		get_template_directory_uri() . '/js/aos.js',
+// 		array(),
+// 		'1.0.0',
+// 		// array( 'strategy' => 'defer' ),
+// 		true,
+// 	);
+
+// 	wp_enqueue_script(
+// 		'theme-js',
+// 		get_template_directory_uri() . '/js/theme.js',
+// 		array('AOS'),
+// 		'1.0.0',
+// 		// array( 'strategy' => 'defer' ),
+// 		true,
+// 	);
+
+// }
+// add_action( 'wp_enqueue_scripts', 'sc_scripts' );
