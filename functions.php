@@ -45,6 +45,8 @@ function school_theme_setup() {
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
 	add_theme_support( 'post-thumbnails' );
+	// custom crop size
+	add_image_size( 'custom', 300, 200, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -100,6 +102,11 @@ function school_theme_setup() {
 			'flex-height' => true,
 		)
 	);
+
+	add_theme_support( 'align-wide' );
+	add_theme_support( 'align-full' );
+
+
 }
 add_action( 'after_setup_theme', 'school_theme_setup' );
 
@@ -176,6 +183,11 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
+
+// Removing all title prefix
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
 
 // Add, Remove, or Edit Custom Comment Form Fields
 function custom_comment_form_fields( $default_fields ) {
