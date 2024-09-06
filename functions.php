@@ -235,3 +235,18 @@ function change_default_title( $title ) {
 }
 
 add_filter('enter_title_here', 'change_default_title');
+
+// Adding custom logo (for the footer)
+add_theme_support( 'custom-logo' );
+
+function school_theme_custom_logo_setup() {
+	$defaults = array(
+		'height' 				=> 240,
+		'width' 				=> 240,
+		'flex-height'		    => true,
+		'flex-width' 			=> true,
+	);
+	add_theme_support( 'custom-logo' );
+}
+
+add_action('after_setup_theme', 'school_theme_custom_logo_setup');

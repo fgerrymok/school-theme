@@ -13,9 +13,11 @@
 
 	<footer id="colophon" class="site-footer">
 		<nav class="footer-logo">
-			<a href="#" class="custom-logo-link">
-				<img src="" alt="School Site Logo">
-			</a>
+			<?php
+			if ( function_exists( 'the_custom_logo' ) ) {
+				the_custom_logo();
+			}
+			?>		
 		</nav>
 		<section class="footer-credits">
 			<h2><?php esc_html_e('Credits'); ?></h2>
