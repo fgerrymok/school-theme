@@ -1,6 +1,6 @@
 <?php
 function sc_register_custom_post_types() {
-    // Register CPT for students
+    // Register Students CPT 
     $labels = array(
         'name'               => _x( 'Students', 'post type general name' ),
         'singular_name'      => _x( 'Student', 'post type singular name'),
@@ -106,6 +106,7 @@ function sc_register_custom_post_types() {
 
 }
 add_action( 'init', 'sc_register_custom_post_types' );
+
 
 function sc_register_taxonomies() {
     // Add Student Specialty taxonomy
