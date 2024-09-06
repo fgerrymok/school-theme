@@ -147,6 +147,31 @@ function school_theme_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_style(
+		'aos-styles',
+		get_template_directory_uri() . '/style.css',
+		array(),
+		'1.0.0',
+	);
+
+	wp_enqueue_script(
+		'theme-js',
+		get_template_directory_uri() . '/js/theme.js',
+		array(),
+		'1.0.0',
+		// array( 'strategy' => 'defer' ),
+		true,
+	);
+	wp_enqueue_script(
+		'aos-script',
+		get_template_directory_uri() . '/js/aos.js',
+		array(),
+		'1.0.0',
+		// array( 'strategy' => 'defer' ),
+		true,
+	);
+
 }
 add_action( 'wp_enqueue_scripts', 'school_theme_scripts' );
 
@@ -253,33 +278,33 @@ add_action('after_setup_theme', 'school_theme_custom_logo_setup');
 
 
 // Enqueue JS scripts
-// function sc_scripts() {
-// 	// AOS Animate on Scroll
+function sc_scripts() {
+	// AOS Animate on Scroll
 
-// 	wp_enqueue_style(
-// 		'aos-styles',
-// 		get_template_directory_uri() . '/style.css',
-// 		array(),
-// 		'1.0.0',
-// 	);
+	// wp_enqueue_style(
+	// 	'aos-styles',
+	// 	get_template_directory_uri() . '/style.css',
+	// 	array(),
+	// 	'1.0.0',
+	// );
 
-// 	wp_enqueue_script(
-// 		'aos-script',
-// 		get_template_directory_uri() . '/js/aos.js',
-// 		array(),
-// 		'1.0.0',
-// 		// array( 'strategy' => 'defer' ),
-// 		true,
-// 	);
+	// wp_enqueue_script(
+	// 	'aos-script',
+	// 	get_template_directory_uri() . '/js/aos.js',
+	// 	array(),
+	// 	'1.0.0',
+	// 	// array( 'strategy' => 'defer' ),
+	// 	true,
+	// );
 
-// 	wp_enqueue_script(
-// 		'theme-js',
-// 		get_template_directory_uri() . '/js/theme.js',
-// 		array('AOS'),
-// 		'1.0.0',
-// 		// array( 'strategy' => 'defer' ),
-// 		true,
-// 	);
+	// wp_enqueue_script(
+	// 	'theme-js',
+	// 	get_template_directory_uri() . '/js/theme.js',
+	// 	array('AOS'),
+	// 	'1.0.0',
+	// 	// array( 'strategy' => 'defer' ),
+	// 	true,
+	// );
 
-// }
-// add_action( 'wp_enqueue_scripts', 'sc_scripts' );
+}
+add_action( 'wp_enqueue_scripts', 'sc_scripts' );
