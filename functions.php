@@ -263,35 +263,21 @@ function school_theme_custom_logo_setup() {
 
 add_action('after_setup_theme', 'school_theme_custom_logo_setup');
 
+// AOS
+function add_aos_library() {
+    wp_enqueue_style( 
+		'aos-css', 
+		'https://unpkg.com/aos@2.3.1/dist/aos.css',
+		 array(), 
+		'2.3.1',);
+    
+    wp_enqueue_script( 
+		'aos-js', 
+		'https://unpkg.com/aos@2.3.1/dist/aos.js', 
+		array(), 
+		'2.3.1', 
+		true );
 
-// Enqueue JS scripts
-// function sc_scripts() {
-// 	// AOS Animate on Scroll
-
-// 	wp_enqueue_style(
-// 		'aos-styles',
-// 		get_template_directory_uri() . '/style.css',
-// 		array(),
-// 		'1.0.0',
-// 	);
-
-// 	wp_enqueue_script(
-// 		'aos-script',
-// 		get_template_directory_uri() . '/js/aos.js',
-// 		array(),
-// 		'1.0.0',
-// 		// array( 'strategy' => 'defer' ),
-// 		true,
-// 	);
-
-// 	wp_enqueue_script(
-// 		'theme-js',
-// 		get_template_directory_uri() . '/js/theme.js',
-// 		array('AOS'),
-// 		'1.0.0',
-// 		// array( 'strategy' => 'defer' ),
-// 		true,
-// 	);
-
-// }
-// add_action( 'wp_enqueue_scripts', 'sc_scripts' );
+    wp_add_inline_script( 'aos-js', 'AOS.init();' );
+}
+add_action( 'wp_enqueue_scripts', 'add_aos_library' );

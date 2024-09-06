@@ -38,7 +38,7 @@ get_header();
 					$query -> the_post();
 					?>
 					<!-- output contents -->
-						<article>
+						<article data-aos="fade-up">
 							<a href="<?php the_permalink();?>"><h2><?php the_title();?></h2></a>
 							<?php the_post_thumbnail( 'custom' ); ?>
 						<?php the_excerpt();?>
