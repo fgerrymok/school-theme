@@ -15,11 +15,22 @@ get_header();
 		<?php
 		while ( have_posts() ) :
 			the_post();
+			?>
 
-			get_template_part( 'template-parts/content', get_post_type() );
+			<article>
+				<header class="entry-header">
+					<h1><?php the_title(); ?></h1>
+				</header>
+				<div class="entry-content">
+					<?php the_post_thumbnail( 'medium', array( 'class' => 'alignright'))?>
+					<?php the_content();?>
+				</a>
+			</div>
+			</article>
 			
-			echo "<aside>";
-			
+			<aside>
+				<h3>Meet other Designer students:</h3>
+			<?php
 			the_post_navigation(
 				array(
 					'prev_text'          => '%title',
@@ -29,8 +40,8 @@ get_header();
 				);
 				
 		endwhile; // End of the loop.
-		echo "</aside>";
 		?>
+		</aside>
 
 	</main><!-- #main -->
 

@@ -184,10 +184,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-/**
- * Custom Post Types & Taxonomies.
- */
-require get_template_directory() . '/inc/cpt-taxonomy.php';
 
 
 // Removing all title prefix

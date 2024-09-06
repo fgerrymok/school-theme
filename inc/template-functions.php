@@ -38,18 +38,18 @@ add_action( 'wp_head', 'school_theme_pingback_header' );
 
 
 // Change placeholder of title on the CPT student 
-function change_default_title( $title ){
+// function change_default_title( $title ){
 
-	$screen = get_current_screen();
+// 	$screen = get_current_screen();
 	
-	if ( 'sc-student' == $screen->post_type ){
-	$title = 'Add student name';
-	}
+// 	if ( 'sc-student' == $screen->post_type ){
+// 	$title = 'Add student name';
+// 	}
 	
-	return $title;
-}
+// 	return $title;
+// }
 	
-add_filter( 'custom_placeholder_students', 'change_default_title' );
+// add_filter( 'custom_placeholder_students', 'change_default_title' );
 
 
 // Change Excerpt Length to 20 words
