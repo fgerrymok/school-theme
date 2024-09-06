@@ -67,3 +67,5 @@ function sc_excerpt_more( $more ) {
 	return $more;
 }
 add_filter( 'excerpt_more', 'sc_excerpt_more', 999);
+
+

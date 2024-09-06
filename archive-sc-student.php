@@ -40,7 +40,7 @@ get_header();
 					<!-- output contents -->
 						<article>
 							<a href="<?php the_permalink();?>"><h2><?php the_title();?></h2></a>
-							<?php the_post_thumbnail( 'medium' ); ?>
+							<?php the_post_thumbnail( 'custom' ); ?>
 						<?php the_excerpt();?>
 						<!-- Taxonomy terms -->
 						<?php 
