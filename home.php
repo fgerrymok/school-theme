@@ -1,8 +1,12 @@
+
+
 <?php
 
 get_header();
 
 ?>
+
+
 
 	<main id="primary" class="site-main">
 
@@ -17,7 +21,7 @@ get_header();
 					while (have_posts()) {
 						the_post();
 						?>
-						<article class="aos-init" data-aos='fade-up'>
+						<article class="post-item" data-aos="fade-up">
 							<header class="entry-header">
 								<a href="<?php the_permalink(); ?>">
 									<h2><?php the_title(); ?></h2>

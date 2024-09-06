@@ -24,12 +24,24 @@ get_header();
 				<div class="entry-content">
 					<?php the_post_thumbnail( 'medium', array( 'class' => 'alignright'))?>
 					<?php the_content();?>
-				</a>
+
 			</div>
 			</article>
 			
 			<aside>
-				<h3>Meet other Designer students:</h3>
+			<?php 
+					// test here
+					
+					$taxonomy = 'sc-student-specialty'; 
+					$post_id = get_the_ID();
+					
+					$terms = get_the_terms( $post_id, $taxonomy );
+					if ( $terms && ! is_wp_error( $terms ) ) :
+						foreach ( $terms as $term ) {
+								echo '<h3>Meet other '. $term->name .' students:</h3>';
+						}
+					endif;
+					;?>
 			<?php
 			the_post_navigation(
 				array(
