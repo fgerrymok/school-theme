@@ -11,15 +11,10 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+	<header class="page-header">
+			<h1 class='page-title'>The Class</h1>
+	</header><!-- .page-header -->
 		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-
 			<?php
 			$args = array(
 				'post_type'      => 'sc-student',
@@ -30,21 +25,19 @@ get_header();
 			$query = new WP_Query ( $args );
 			if ( $query -> have_posts() ):
 			?>
-			<section>
-				<h1>The Class</h1>
-				<div class="students-wrapper">
+			<section class="students">
 				<?php while ($query -> have_posts()) :
 					$query -> the_post();
 					?>
 					<!-- output contents -->
-						<article>
-							<a href="<?php the_permalink();?>"><h2><?php the_title();?></h2></a>
+						<article class="student-item">
+						<h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 							<?php the_post_thumbnail( 'custom' ); ?>
 						<?php the_excerpt();?>
 						<!-- Taxonomy terms -->
 						<?php 
 					//  the_terms( post id,      taxonomy,                String to use before the terms,     String to use between the terms,     String to use after the terms,       ) 
-						the_terms( get_the_ID(), 'sc-student-specialty',  '<div class="student-specialty">Specialty: ',  ', ',  '</div>' ); 
+						the_terms( get_the_ID(), 'sc-student-specialty',  '<p class="student-specialty">Specialty: ',  ', ',  '</p>' ); 
 						?>
 						</article>
 					<?php

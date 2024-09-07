@@ -48,7 +48,7 @@ body {
   grid-area: main;
   margin-top: 55px;
   padding: 0 1rem;
-  article {
+  .page {
     margin: 0;
   }
 }
@@ -139,5 +139,43 @@ body {
     display: table-cell;
     width: 33.33%;
     padding: 2rem;
+  }
+}
+
+// archive-students ====================================================
+.student-item {
+  max-width: 300px;
+  margin: 0 auto;
+  a,
+  a:visited {
+    color: #003c71;
+    text-decoration: none;
+    font-weight: 700;
+  }
+  p:nth-of-type(1) {
+    a {
+      display: block;
+    }
+  }
+  img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+@media (min-width: 37.5em) {
+  .students {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .student-item {
+    width: 48%;
+    margin: 0 0 3rem;
+  }
+}
+@media (min-width: 56.25em) {
+  .student-item {
+    width: 30%;
   }
 }
