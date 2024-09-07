@@ -17,7 +17,7 @@ get_header();
 			the_post();
 			?>
 
-			<article>
+			<article class="single-student">
 				<header class="entry-header">
 					<h1><?php the_title(); ?></h1>
 				</header>
