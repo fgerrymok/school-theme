@@ -27,11 +27,9 @@ get_header();
 					the_post();
 			?>
 
-				<article>
-					<a href="<?php the_permalink(); ?>">
-						<h2><?php the_title(); ?></h2>
-						<?php the_post_thumbnail( 'medium' )?>
-					</a>
+				<article class="tax student">
+				<h2><a href="<?php the_permalink(); ?>"><?php  the_title(); ?></h2></a>
+					<?php the_post_thumbnail( 'medium', array( 'class' => 'alignleft'))?>
 					<?php the_content();?>
 				</article>
 			<?php
