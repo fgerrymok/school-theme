@@ -17,6 +17,18 @@ get_header();
 
 	<main id="primary" class="site-main">
 		<?php
+        if( have_posts()) {
+            the_post();
+            ?>
+            <article class='page'>
+            <header class='entry-header'>
+                <h1 class='entry-header'><?php the_title() ?></h1>
+            </header>
+            <div class='entry-content'>    
+                <?php the_content() ?>
+
+            <?php
+        }
             if( have_rows('weekly_course_schedule') ):
                 $field = get_field_object('weekly_course_schedule');
                 $sub_fields = $field['sub_fields'];
@@ -49,7 +61,8 @@ get_header();
                 // No rows found
             endif;
             ?>
-
+            </div>
+        </article>
 	</main><!-- #main -->
 
 <?php

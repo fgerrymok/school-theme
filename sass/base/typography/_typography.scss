@@ -4,11 +4,16 @@ input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
-	font-family: $font__main;
-	font-size: 1rem;
-	line-height: $font__line-height-body;
+  color: $color__text-main;
+  font-family: $font__main;
+  font-size: 1rem;
+  line-height: $font__line-height-body;
 }
 
 @import "headings";
 @import "copy";
+
+p {
+  margin: 0 0 1.5rem;
+  line-height: 1.8rem;
+}

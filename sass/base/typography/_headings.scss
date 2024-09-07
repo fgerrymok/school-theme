@@ -4,18 +4,22 @@ h3,
 h4,
 h5,
 h6 {
-	clear: both;
-	margin: 0.5em 0;
+  clear: both;
+  margin: 0.5em 0;
 }
 
 h1 {
-	font-size: 2.5rem;
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 h2 {
-	font-size: 2rem;
+  font-size: 1.5rem;
+  line-height: 2.7rem;
+  margin: 12px 0;
 }
 
 h3 {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
+  padding: 1rem;
 }

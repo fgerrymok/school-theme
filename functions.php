@@ -106,6 +106,13 @@ function school_theme_setup() {
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'align-full' );
 
+	// enqueue Font Open Sans
+	wp_enqueue_style (
+		'open-sans-font', // unique handle
+		'https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap', // url to the CSS file
+		array(), // Dependencies
+		null, // Version Number, for google fonts always set to null
+	);
 
 }
 add_action( 'after_setup_theme', 'school_theme_setup' );

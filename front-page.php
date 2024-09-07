@@ -21,21 +21,26 @@ get_header();
         $blog_query = new WP_Query( $args );
 
         if ( $blog_query -> have_posts() ) {
+            echo "<section class='entry-content'>";
+
             echo "<h2>Recent News</h2>";
             while ( $blog_query -> have_posts() ) {
                 $blog_query -> the_post();
                 ?>
                 <article>
                     <a href="<?php the_permalink(); ?>">
-                        <?php the_post_thumbnail( 'medium' ); ?>
                         <h3><?php the_title(); ?></h3>
+                        <?php the_post_thumbnail( 'medium' ); ?>
                     </a>
                 </article>
                 <?php
             }
             wp_reset_postdata();
+            echo "<p><a href='". get_the_permalink( 106 ). "'>See All News</a></p>";
+            echo "</section>";
         }
 			?>
+
     </main>
 
 <?php 
