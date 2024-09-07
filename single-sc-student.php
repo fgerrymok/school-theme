@@ -30,27 +30,45 @@ get_header();
 			
 			<aside>
 			<?php 
-					// test here
-					
+					// Designer | Developer
 					$taxonomy = 'sc-student-specialty'; 
 					$post_id = get_the_ID();
+					$currentTitle = get_the_title();
 					
 					$terms = get_the_terms( $post_id, $taxonomy );
 					if ( $terms && ! is_wp_error( $terms ) ) :
 						foreach ( $terms as $term ) {
+								$currentTerm = $term->name;
 								echo '<h3>Meet other '. $term->name .' students:</h3>';
-						}
+						}		
 					endif;
 					;?>
 			<?php
-			the_post_navigation(
-				array(
-					'prev_text'          => '%title',
-					'next_text'          => '%title',
-					'excluded_terms'     => '',
+			// the others except current student
+			$args = array(
+				'post_type'      => 'sc-student',
+				'posts_per_page' => -1,
+				'orderby'        => 'title', 
+				'order'          => 'ASC',
+				'tax_query'		 => array(
+					array(
+						'taxonomy' => 'sc-student-specialty',
+						'field'	   => 'slug',
+						'terms'	   => $currentTerm,
+					)
 				)
-				);
-				
+			);
+			$query = new WP_Query( $args );
+			if ( $query-> have_posts() ) :
+				while ($query -> have_posts()) :
+					$query -> the_post();
+					if ( $currentTitle != get_the_title() ) {
+						?>
+						<p><a href="<?php the_permalink() ?>"> <?php the_title() ?> </a></p>
+						<?php
+					}
+				endwhile;
+			endif;
 		endwhile; // End of the loop.
 		?>
 		</aside>

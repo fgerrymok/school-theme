@@ -52,19 +52,25 @@ add_action( 'wp_head', 'school_theme_pingback_header' );
 // add_filter( 'custom_placeholder_students', 'change_default_title' );
 
 
-// Change Excerpt Length to 20 words
+// Change Excerpt Length to 25 words
 function sc_excerpt_length( $length ) {
 	if ( get_post_type() ==  'sc-student'  ) {
         return 25; 
-    }
+    } else {
+		return $length;
+	}
 }
 
 add_filter( 'excerpt_length', 'sc_excerpt_length', 999 );
 
 // Change Excerpt more
 function sc_excerpt_more( $more ) {
+	if ( get_post_type() ==  'sc-student'  ) {
 	$more = '<a class="read-more" href="'.esc_url(get_permalink()).'">' . __('Read more about the student...', 'sc') . '</a>';
 	return $more;
+	} else {
+		return " [...]";
+	}
 }
 add_filter( 'excerpt_more', 'sc_excerpt_more', 999);
 
