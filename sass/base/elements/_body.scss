@@ -47,6 +47,10 @@ body {
   color: $color__background-body;
 }
 
+.site-footer a:hover, .site-footer a:active, .site-footer a:focus {
+  color: $color__text-screen;
+}
+
 .custom-logo {
   width: 9.375rem;
 }
