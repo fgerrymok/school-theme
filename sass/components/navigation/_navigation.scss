@@ -75,14 +75,28 @@
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 50em) {
 
 	.menu-toggle {
 		display: none;
 	}
 
+	.site-header {
+		display: flex;
+		justify-content: space-around;
+	}
+
 	.main-navigation ul {
 		display: flex;
+	}
+
+	.main-navigation {
+		width: fit-content;
+	}
+
+	.main-navigation a {
+		color: white;
+		padding: 1.1rem;
 	}
 }
 
@@ -106,4 +120,21 @@
 		text-align: end;
 		flex: 1 0 50%;
 	}
+}
+
+.site-navigation {
+	position: relative;
+}
+
+.menu-toggle {
+	position: absolute;
+	top: 0.1rem;
+	right: 0.4rem;
+	border: none;
+	background-color: transparent;
+}
+
+.menu-svg {
+	color: white;
+	width: 2.5rem;	
 }
