@@ -81,11 +81,6 @@
 		display: none;
 	}
 
-	.site-header {
-		display: flex;
-		justify-content: space-around;
-	}
-
 	.main-navigation ul {
 		display: flex;
 	}
@@ -95,7 +90,7 @@
 	}
 
 	.main-navigation a {
-		color: white;
+		color: #fff;
 		padding: 1.1rem;
 	}
 }
