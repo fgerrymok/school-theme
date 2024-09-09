@@ -10,7 +10,7 @@ body {
 	z-index: 9999;
 	top: 0;
 	width: 100%;
-	background-color: #000000;
+	background-color: $color__header_background;
 	display: flex;
 	justify-content: space-between;
 }
@@ -22,7 +22,7 @@ body {
 }
 
 .site-branding .site-title a {
-	color: #fff;
+	color: $color__background-body;
 	text-transform: capitalize;
 }
 
@@ -30,6 +30,10 @@ body {
   .site-header {
     display: flex;
     justify-content: space-around;
+  }
+
+  .site-header a:hover, .site-header a:focus, .site-header a:active {
+    background-color: $color__text-screen;
   }
 }
 

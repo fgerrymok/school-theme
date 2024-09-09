@@ -90,8 +90,13 @@
 	}
 
 	.main-navigation a {
-		color: #fff;
+		color: $color__background-body;
 		padding: 1.1rem;
+	}
+
+	.sub-menu {
+		background-color: $color__header_background;
+		flex-direction: column;
 	}
 }
 
@@ -130,6 +135,6 @@
 }
 
 .menu-svg {
-	color: white;
+	color: $color__background-body;
 	width: 2.5rem;	
 }
