@@ -43,8 +43,8 @@ get_header();
 								<?php the_excerpt(); ?>
 							</div>
 							<footer class="entry-footer">
-								<p>Posted in <?php the_category(); ?></p>
-								<p>Tagged <?php the_tags(); ?></p>
+								<p class="category-names"><?php esc_html_e('Posted in: ') ?><?php the_category(); ?></p>
+								<p><?php the_tags(); ?></p>
 								<a href="<?php the_permalink() ?>/#respond">Leave a Comment</a>
 							</footer>
 						</article>
