@@ -232,7 +232,7 @@ body {
 
 // tax-student ====================================================
 .tax.student {
-  padding-top: 1rem;
+  padding: 1rem 0rem 8rem 0rem;
   img {
     width: 200px;
     height: 300px;
@@ -291,5 +291,31 @@ body {
     float: right;
     margin-right: 1.5rem;
     margin-bottom: 0;
+  }
+}
+
+// staff  ====================================================
+
+.staff-wrapper h2 {
+  text-decoration: underline;
+}
+
+.staff-item {
+  padding: 2rem 1rem;
+}
+
+@media(min-width: 46.875rem) {
+  .site-main .staff-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .site-main .staff-wrapper h2 {
+    width: 100%;
+  }
+
+  .staff-wrapper .staff-item {
+    width: 50%;
+    padding: 2rem;
   }
 }
