@@ -1,0 +1,45 @@
+.site-header {
+	grid-area: header;
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	width: 100%;
+	background-color: $color__header_background;
+	display: flex;
+	justify-content: space-between;
+}
+
+.site-branding .site-title {
+	font-size: 2rem;
+	padding: 1rem;
+	margin: 0;
+}
+
+.site-branding .site-title a {
+	color: $color__background-body;
+	text-transform: capitalize;
+}
+
+.main-navigation .menu {
+  background-color: $color__header_background;
+  width: 100%;
+  position: fixed;
+  top: 3.8rem;
+  left: 0;
+}
+
+.main-navigation .menu li {
+  text-align: center;
+  padding: 1rem;
+}
+
+.main-navigation li a {
+  color: $color__background-body;
+}
+
+@media (min-width: 50em) {
+  .site-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}

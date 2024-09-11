@@ -1,0 +1,23 @@
+.staff-wrapper h2 {
+    text-decoration: underline;
+  }
+  
+  .staff-item {
+    padding: 2rem 1rem;
+  }
+  
+  @media(min-width: 46.875em) {
+    .site-main .staff-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .site-main .staff-wrapper h2 {
+      width: 100%;
+    }
+  
+    .staff-wrapper .staff-item {
+      width: 50%;
+      padding: 2rem;
+    }
+  }

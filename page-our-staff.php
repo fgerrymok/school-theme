@@ -31,7 +31,7 @@ get_header();
 					// output the term
 					?>
 					<section class="staff-wrapper">
-						<h2><?php echo esc_html($term->name) ?></h2>	
+						<h2><?php echo esc_html_e($term->name) ?></h2>	
 						<?php
 						// get posts associated with roles taxonomy type
 						$args = array (
@@ -70,7 +70,9 @@ get_header();
 									}
 									if ( get_field('website') ) {
 										?>
-										<a href="<?php the_field('website') ?>">Instructor Website</a>
+										<a href="<?php the_field('website') ?>">
+											<?php esc_html_e('Instructor Website') ?>
+										</a>
 										<?php
 									}
 								}
@@ -90,5 +92,4 @@ get_header();
 	</main>
 
 <?php
-get_sidebar();
 get_footer();

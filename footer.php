@@ -43,7 +43,6 @@
 		</section>
 		<nav class="footer-nav">
 			<h2><?php esc_html_e('Links'); ?></h2>
-			<!-- Need to update footer nav on mindset so that it displays Schedule instead of Staff  -->
 			<?php wp_nav_menu(array( 'theme_location' => 'footer-nav')); ?>
 		</nav>
 
