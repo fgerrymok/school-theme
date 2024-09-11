@@ -28,7 +28,7 @@ get_header();
 								</a>
 								<div class="entry-meta">
 									<p>
-										Posted on
+										<?php esc_html_e('Posted in: ') ?>
 										<a href="<?php echo esc_url(get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j'))); ?>">
 											<?php echo get_the_date(); ?>
 										</a>
@@ -45,7 +45,7 @@ get_header();
 							<footer class="entry-footer">
 								<p class="category-names"><?php esc_html_e('Posted in: ') ?><?php the_category(); ?></p>
 								<p><?php the_tags(); ?></p>
-								<a href="<?php the_permalink() ?>/#respond">Leave a Comment</a>
+								<a href="<?php the_permalink() ?>/#respond"><?php esc_html_e('Leave a Comment') ?></a>
 							</footer>
 						</article>
 						<?php

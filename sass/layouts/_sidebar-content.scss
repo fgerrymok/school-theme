@@ -1,9 +1,11 @@
 .site {
 	display: grid;
 	grid-template-columns: ($size__site-sidebar) auto;
+	grid-template-rows: auto 1fr auto auto;
 	grid-template-areas:
 		"header header"
-		"sidebar main"
+		"main main"
+		"sidebar sidebar"
 		"footer footer";
 }
 
@@ -18,10 +20,26 @@
 
 .widget-area {
 	grid-area: sidebar;
+	padding: 2rem;
 }
 
 .site-footer {
 	grid-area: footer;
+}
+
+.wp-block-calendar {
+	width: 3rem;
+}
+
+@media(min-width: 50em) {
+	.widget-area {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	.widget-area .widget-block {
+		width: 25%;
+	}
 }
 
 @import "no-sidebar";

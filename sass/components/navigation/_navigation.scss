@@ -75,29 +75,32 @@
 	display: block;
 }
 
-@media screen and (min-width: 50em) {
+.main-navigation .menu .sub-menu {
+	display: flex;
+}
+
+@media(min-width: 50em) {
 
 	.menu-toggle {
-		display: none;
+		display: none !important;
 	}
 
-	.main-navigation ul {
-		display: flex;
+	.main-navigation .menu {
+		display: flex !important;
+		position: fixed;
+		top: 0.15rem;
+		left: 10rem;
 	}
 
-	.main-navigation {
-		width: fit-content;
+	.main-navigation .menu li:hover, .main-navigation .menu li:active {
+		background-color: $color__text-screen;
 	}
 
-	.main-navigation a {
-		color: $color__background-body;
-		padding: 1.1rem;
-	}
-
-	.sub-menu {
+	.main-navigation .menu .sub-menu {
+		display: block;
 		background-color: $color__header_background;
-		flex-direction: column;
 	}
+
 }
 
 .comment-navigation,
