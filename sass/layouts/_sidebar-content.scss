@@ -21,6 +21,14 @@
 .widget-area {
 	grid-area: sidebar;
 	padding: 2rem;
+	max-width: 62.5rem;
+	margin: 0 auto !important;
+	display: flex;
+	flex-direction: column;
+}
+
+.widget-area .wp-block-search__inside-wrapper {
+	width: 100% !important;
 }
 
 .site-footer {
@@ -31,14 +39,14 @@
 	width: 3rem;
 }
 
-@media(min-width: 50em) {
+@media(min-width: 60em) {
 	.widget-area {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr
 	}
 
-	.widget-area .widget-block {
-		width: 25%;
+	.widget-area section {
+		padding: 0.6rem;
 	}
 }
 

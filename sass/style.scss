@@ -105,3 +105,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------- */
 @import "layouts/content-sidebar";
 @import "layouts/sidebar-content";
+
+/* Pages
+--------------------------------------------- */
+
+@import "pages/header.scss";
+@import "pages/front-page";
+@import "pages/footer";
+@import "pages/students";
+@import "pages/schedule";
+@import "pages/staff";
+@import "pages/news";

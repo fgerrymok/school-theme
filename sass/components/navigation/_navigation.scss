@@ -76,7 +76,7 @@
 }
 
 .main-navigation .menu .sub-menu {
-	display: flex;
+	display: block;
 }
 
 @media(min-width: 50em) {
@@ -87,9 +87,9 @@
 
 	.main-navigation .menu {
 		display: flex !important;
-		position: fixed;
-		top: 0.15rem;
-		left: 10rem;
+		position: fixed !important;
+		top: 0.15rem !important;
+		left: 10rem !important;
 	}
 
 	.main-navigation .menu li:hover, .main-navigation .menu li:active {
