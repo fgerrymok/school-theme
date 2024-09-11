@@ -1,0 +1,30 @@
+.schedule {
+    border-collapse: collapse;
+    tr {
+      display: block;
+      padding: 1rem;
+      background-color: #eee;
+    }
+    tr:nth-of-type(odd) {
+      background-color: #fff;
+    }
+    th,
+    td {
+      display: block;
+    }
+    th {
+      text-align: left;
+      background-color: #eee;
+    }
+  }
+  @media (min-width: 37.5em) {
+    .schedule tr {
+      display: table-row;
+    }
+    .schedule th,
+    .schedule td {
+      display: table-cell;
+      width: 33.33%;
+      padding: 2rem;
+    }
+  }

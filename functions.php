@@ -291,3 +291,17 @@ function add_aos_library() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'add_aos_library' );
+
+// Mobile Nav Menu Toggle
+
+function toggle_mobile_menu() {
+
+	wp_enqueue_script( 
+		'toggle-menu-js', 
+		get_template_directory_uri() . '/js/toggle-menu.js', 
+		array(), 
+		'1.0.0', 
+		true );
+
+}
+add_action( 'wp_enqueue_scripts', 'toggle_mobile_menu' );

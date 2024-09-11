@@ -75,15 +75,32 @@
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+.main-navigation .menu .sub-menu {
+	display: block;
+}
+
+@media(min-width: 50em) {
 
 	.menu-toggle {
-		display: none;
+		display: none !important;
 	}
 
-	.main-navigation ul {
-		display: flex;
+	.main-navigation .menu {
+		display: flex !important;
+		position: fixed !important;
+		top: 0.15rem !important;
+		left: 10rem !important;
 	}
+
+	.main-navigation .menu li:hover, .main-navigation .menu li:active {
+		background-color: $color__text-screen;
+	}
+
+	.main-navigation .menu .sub-menu {
+		display: block;
+		background-color: $color__header_background;
+	}
+
 }
 
 .comment-navigation,
@@ -106,4 +123,21 @@
 		text-align: end;
 		flex: 1 0 50%;
 	}
+}
+
+.site-navigation {
+	position: relative;
+}
+
+.menu-toggle {
+	position: absolute;
+	top: 0.1rem;
+	right: 0.4rem;
+	border: none;
+	background-color: transparent;
+}
+
+.menu-svg {
+	color: $color__background-body;
+	width: 2.5rem;	
 }

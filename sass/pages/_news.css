@@ -1,0 +1,19 @@
+.entry-footer {
+  padding: 0rem 0rem 4rem 0rem;
+}
+
+.entry-footer .category-names {
+  display: inline;
+  width: 100%;
+}
+
+.entry-footer .post-categories {
+  list-style-type: none;
+  padding: 0;
+  display: inline;
+  margin: 0;
+}
+
+.post-categories li {
+  display: inline;
+}
