@@ -1,83 +1,79 @@
+.entry-content {
+  max-width: 62.5rem;
+  // margin: 0 auto !important;
+}
+
 .entry-header {
-    max-width: 62.5rem;
-    margin: 0 auto !important;
+  max-width: 62.5rem;
+}
+
+.site {
+  max-width: 137.5rem;
+  overflow: hidden;
+}
+
+.site-main {
+  padding: 0 1rem;
+  .page {
+    margin: 0;
   }
-  
-  .site {
-    max-width: 137.5rem;
-    margin: 0 auto !important;
+}
+
+.home .entry-content article {
+  a {
+    position: relative;
+    display: block;
+    margin: 0 auto 1rem;
+    max-width: 19rem;
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 12px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     overflow: hidden;
   }
-  
-  .site-main {
-    margin-top: 3.75rem;
-    padding: 0 1rem;
-    .page {
-      margin: 0;
-    }
+  img {
+    display: block;
+    width: 100%;
   }
-  
+  h3 {
+    width: 100%;
+    margin: 1rem 0;
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+@media (min-width: 50em) {
   .home .entry-content {
-    a {
-      position: relative;
-      display: block;
-      margin: 0 auto 1rem;
-      max-width: 19rem;
-    }
-    h3 {
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    h2,
+    p {
       width: 100%;
-      margin: 0;
-      padding: 1rem;
-      font-size: 1rem;
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.8);
     }
-    img {
-      display: block;
+    a {
+      margin: 0 0.5rem 1rem;
     }
   }
-  
-  .entry-content {
-    max-width: 62.5rem;
-    margin: 0 auto !important;
-  }
-  
-  @media (min-width: 50em) {
-    .home .entry-content {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      h2,
-      p {
-        width: 100%;
-      }
-      a {
-        margin: 0 0.5rem 1rem;
-      }
-    }
-  }
-  
+}
+
+.alignwide {
+  display: block;
+  width: auto;
+  max-width: 100vw;
+  margin: 2rem calc(50% - 50vw);
+}
+.alignfull {
+  display: block;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 2rem calc(50% - 50vw);
+}
+@media (min-width: 81.25em) {
   .alignwide {
-    display: block;
-    width: auto;
-    max-width: 100vw;
-    margin: 2rem calc(50% - 50vw);
+    max-width: 81.25rem;
+    margin-left: -150px;
+    margin-right: -150px;
   }
-  .alignfull {
-    display: block;
-    width: 100vw;
-    max-width: 100vw;
-    margin: 2rem calc(50% - 50vw);
-  }
-  @media (min-width: 81.25em) {
-    .alignwide {
-      max-width: 81.25rem;
-      margin-left: -150px;
-      margin-right: -150px;
-    }
-  }
-  
+}

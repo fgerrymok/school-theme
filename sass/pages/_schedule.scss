@@ -1,30 +1,33 @@
 .schedule {
-    border-collapse: collapse;
-    tr {
-      display: block;
-      padding: 1rem;
-      background-color: #eee;
-    }
-    tr:nth-of-type(odd) {
-      background-color: #fff;
-    }
-    th,
-    td {
-      display: block;
-    }
-    th {
-      text-align: left;
-      background-color: #eee;
-    }
+  border-collapse: collapse;
+  border: 1px solid rgb(166, 215, 255);
+  caption {
+    padding: 1rem 0;
+    font-weight: 900;
   }
-  @media (min-width: 37.5em) {
-    .schedule tr {
-      display: table-row;
-    }
-    .schedule th,
-    .schedule td {
-      display: table-cell;
-      width: 33.33%;
-      padding: 2rem;
-    }
+  th {
+    text-align: left;
+    background-color: rgb(27, 145, 255);
+    color: white;
   }
+  tr {
+    display: block;
+    border: 1px solid rgb(166, 215, 255);
+  }
+  th,
+  td {
+    display: block;
+    padding: 0.5rem;
+  }
+}
+@media (min-width: 37.5em) {
+  .schedule tr {
+    display: table-row;
+  }
+  .schedule th,
+  .schedule td {
+    display: table-cell;
+    width: 20%;
+    padding: 1rem;
+  }
+}

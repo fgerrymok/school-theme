@@ -28,7 +28,7 @@ get_header();
 			</div>
 			</article>
 			
-			<aside>
+			<aside class="single-student-aside">
 			<?php 
 					// Designer | Developer
 					$taxonomy = 'sc-student-specialty'; 

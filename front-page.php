@@ -24,19 +24,20 @@ get_header();
             echo "<section class='entry-content'>";
 
             echo "<h2>Recent News</h2>";
+            echo "<p><a href='". get_the_permalink( 106 ). "'>See All News</a></p>";
             while ( $blog_query -> have_posts() ) {
                 $blog_query -> the_post();
                 ?>
                 <article>
                     <a href="<?php the_permalink(); ?>">
-                        <h3><?php the_title(); ?></h3>
                         <?php the_post_thumbnail( 'medium' ); ?>
+                        <h3><?php the_title(); ?></h3>
                     </a>
                 </article>
                 <?php
             }
             wp_reset_postdata();
-            echo "<p><a href='". get_the_permalink( 106 ). "'>See All News</a></p>";
+
             echo "</section>";
         }
 			?>
